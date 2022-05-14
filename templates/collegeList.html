@@ -1,0 +1,47 @@
+<section class="courses">
+    <div class="container" ng-controller="collegeCtrl">
+        <div class="section-title">
+            <h2>Database</h2>
+            <p>Colleges List</p>           
+        </div> 
+       
+                           
+        <div class="row mb-2">
+            <div class="col-1">College Name</div>
+            <div class="col-4">
+                <input type="text" class="form-control" ng-model="data.collegeName">
+            </div>
+            <div class="col-1">College District</div>
+            <div class="col-4">
+                <input type="text" class="form-control" ng-model="data.collegeDistrict">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-2" 
+                        ng-click="Add()" ng-hide="data._id">
+                        <i class="icofont-ui-add"></i>
+                </button>
+                <button type="submit" class="btn btn-success mb-2" 
+                    ng-click="Update()" ng-show="data._id">
+                    <i class="icofont-save"></i>
+                </button>        
+                <button type="submit" class="btn btn-danger mb-2" 
+                            ng-click="Delete()" ng-show="data._id">
+                            <i class="icofont-ui-delete"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row pb-1" ng-repeat="x in college">
+            <div class="col-8">{{x.collegeName}}</div>
+            <div class="col-3">{{x.collegeDistrict}}</div>
+            <div class="col-1">
+                <button type="submit" class="btn btn-warning" 
+                ng-click="Edit(x)">
+                <i class="icofont-edit"></i>
+            </button>
+            </div>
+        </div>
+              
+        
+    </div>
+
+</section>

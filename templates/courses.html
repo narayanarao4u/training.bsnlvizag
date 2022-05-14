@@ -1,0 +1,33 @@
+<section id="popular-courses" class="courses"  ng-controller="coursesCtrl">
+  <div class="container" data-aos="fade-up"  ng-if="data">
+    
+      <div class="section-title">
+        <h2>Courses</h2>
+        <p>Popular Courses</p>
+      </div>
+
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">   
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            ng-repeat="x in data" >
+              <div class="course-item">
+                <img ng-src="assets/img/{{x.courseImg}}" class="img-fluid" alt="...">
+                <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4>{{x.courseType}}</h4>
+                        <!-- <p class="price">Rs {{x.courseAMT}}/-</p> -->
+                        <h3><a href="{{x.courselink}}">{{x.courseName}}</a></h3>
+                      </div>
+    
+                  
+                  <p>{{x.courseDescription}}</p>
+
+                </div>
+              </div>
+            </div> <!-- End Course Item-->
+
+
+      </div>
+
+  </div>
+</section>

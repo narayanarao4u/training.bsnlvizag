@@ -1,0 +1,27 @@
+<section class="courses">
+    
+
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Registration</h2>
+            <p>Data Submitted</p>
+          </div>
+        <div class="bctGrid2">
+            <label> Name</label>
+            <label> {{data.name}}</label>
+            <label> email</label>
+            <label> {{data.email}}</label>
+            <label> Mobile</label>
+            <label> {{data.mobile}}</label>
+            <label> Course</label>
+            <label> {{data.courseType}} - {{data.courseName}} for {{data.courseDuration}} weeks</label>
+            <label> Transation Details</label>
+            <label> {{data.TransationID}}@{{data.TransationDate}} </label>
+            <label> ReferID</label>
+            <label class="text-success font-weight-bold"> {{data._id}}</label>
+        </div>
+        <button class="btn btn-success" onclick="window.print()">Print this page</button>
+    </div>  
+     
+    
+</section>

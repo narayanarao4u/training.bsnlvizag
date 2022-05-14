@@ -1,0 +1,33 @@
+{
+	"AppTitle":"BCT Vizag",
+	"Courses":[
+		{	"courseName":"Networking",
+			"courseType":"Internship",
+			"courseDescription":"Basic Idea on switching and routing protocols, IP addressing",
+			"courseImg":"networking.jpg",
+			"courseAMT":2950,
+			"courselink":"networking"
+		},
+		{	"courseName":"Mobile Technology",
+			"courseType":"Internship",
+			"courseDescription":"Basic Idea on Mobile Technology and Evolution of Mobile Technology from 2G to 5G",
+			"courseImg":"mobileTech.jpg",
+			"courseAMT":2950,
+			"courselink":"mobileTech"
+		},
+		{	"courseName":"Optical communication",
+			"courseType":"Internship",
+			"courseDescription":"Basic Idea on Optical communication, MADM, OLTE and FTTH concep",
+			"courseImg":"optical.jpg",
+			"courseAMT":2950,
+			"courselink":"optical"
+		},
+		{	"courseName":"Telecom",
+			"courseType":"Internship",
+			"courseDescription":"Basic Idea on Telecom, switching, Transmission and Broadband Technology",
+			"courseImg":"telecom.jpg",
+			"courseAMT":2950,
+			"courselink":"telecom"
+		}
+	]
+}

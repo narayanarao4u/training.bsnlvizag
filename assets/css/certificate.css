@@ -1,0 +1,244 @@
+.ct {
+  border: 8px #30a0fa; 
+  border-style: double; 
+  border-radius: 5px; 
+  max-width: 650px; 
+  margin: 10px auto; 
+  padding: 10px 0; 
+}
+
+.ct .head {
+  text-align: center; 
+  margin-top: 0.5cm
+}
+
+.ct .bsnl {
+  font-size: 24pt; 
+  font-weight: bolder
+}
+
+.ct .head > p {
+  padding: 0; 
+  margin: 0
+  
+}
+
+.govt {
+  font-style: italic; 
+ 
+}
+
+.c-title {
+  text-decoration: underline; 
+  padding: 10px 0; 
+  font-size: 19pt;
+}
+
+.c-body {
+  text-indent: 70px; 
+  text-align: justify; 
+  text-justify: inter-word; 
+  padding: 25px; 
+  font-size: 14pt; 
+}
+.c-body-p {
+  line-height: 2.5; 
+}
+
+.overlay {
+  bottom: 25px; 
+  position: relative; 
+}
+
+#crtfdata {
+  text-align: center; 
+}
+@media print {
+  
+  #header, #footer, #nav, #crtfdata, .icofont-navigation-menu {
+    display: none ! important; 
+    }
+
+    .ct {
+     max-width: 90vh; 
+     height:80vh;
+    }
+}
+
+
+
+/*#region Certificate entry**/
+.bctGrid4 {
+  display: grid; 
+  grid-template-columns: auto auto auto auto; 
+  column-gap: 5px; 
+  row-gap: 5px;
+  padding: 5px; 
+  border-radius: 5px; 
+}
+
+.bctGrid2 {
+  display: grid; 
+  grid-template-columns: auto auto; 
+  column-gap: 5px;
+  row-gap: 5px; 
+  padding: 5px; 
+  border-radius: 5px; 
+}
+.bctBlueBorder {
+  border: 2px solid steelblue; 
+}
+/*#endregion **/
+
+/*#region Slide Show*****/
+
+#slideset2 {
+  height: 80vh;  
+  position: relative; 
+  overflow: hidden
+}
+#slideset2:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#slideset2 .container {
+  padding-top: 72px;
+  height: 100vh;  
+  }
+#slideset2 h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff; 
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px  rgb(37, 39, 37);
+  }
+#slideset2 h2 {
+  color: #eee;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  }   
+  
+  
+@media (max-width: 992px) {
+  #slideset2 .container {
+    padding-top: 62px;
+  }
+}
+
+#slideset2 h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+#slideset2 h2 {
+  color: #eee;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+
+
+
+@media (min-width: 1024px) {
+  #slideset2 {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #slideset2 {
+    height: 100vh;
+  }
+  #slideset2 h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #slideset2 h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+
+/* #slideset2 > * {
+ 
+  position: absolute; 
+  top: 100%;
+  left: 0;  
+  height: 100%;
+  width: 100vw;
+  animation: 20s autoplay2 infinite ease-in-out
+}
+
+@keyframes autoplay2 {
+0% {top: 100%}
+4% {top: 0%}
+33.33% {top: 0%}
+37.33% {top: -100%}
+100% {top: -100%}
+} */
+
+#slideset2 > :nth-child(1) {
+  background: url("../img/hero-bg.jpg") top center;
+   background-size: cover;
+}
+
+/* #slideset2 > :nth-child(2) {
+  background: url("../img/AUMOU.jpg") top center;
+
+  background-size: cover;
+}
+#slideset2 > :nth-child(3) {
+  background: url("../img/Anits.jpg") top center;
+
+  background-size: cover;
+}
+#slideset2 > :nth-child(4) {
+background: url("../img/gaytriEG.jpg") top center;
+
+background-size: cover;
+}
+#slideset2 > :nth-child(5) {
+background: url("../img/gitam.jpg") top center;
+
+background-size: cover;
+}
+
+#slideset2 > *:nth-child(1) {animation-delay: 0s}
+#slideset2 > *:nth-child(2) {animation-delay: 4s}
+#slideset2 > *:nth-child(3) {animation-delay: 8s}
+#slideset2 > *:nth-child(4) {animation-delay: 12s}
+#slideset2 > *:nth-child(5) {animation-delay: 16s} */
+
+
+/*#endregion Slide Show*****/
+
+/*#region table-fit*/
+table.table-fit {
+width: auto !important;
+table-layout: auto !important;
+}
+table.table-fit thead th, table.table-fit tfoot th {
+width: auto !important;  
+}
+table.table-fit tbody td, table.table-fit tfoot td {
+width: auto !important;  
+}
+thead{
+position: sticky;
+top: 0;
+}
+/*#endregion table-fit*/
+
+
+

@@ -1,0 +1,49 @@
+<section class="about" >
+    <div class="container" data-aos="flip-left"  ng-controller="findstudent">
+       <div  id="crtfdata">              
+            <label for="name">Roll No : </label>
+            <input type="text"  ng-model="findData.collegeid">
+            
+            <label for="name">ID No:</label>
+            <input type="text" ng-model="findData.idNo">
+        
+            <button class="btn btn-info" ng-click="getData()">Get Data 
+                    <i class="icofont-certificate"></i></button>      
+           
+       </div> 
+     
+      <div class="ct" ng-if="certificate">
+          <div class="head">
+            <img src="assets/img/bsnl-yellow.png" alt="BSNL" style="height: 85PX;">
+            <p class="bsnl">Bharat Sanchar Nigam Limited</p>
+            <p class="govt">(A Government of India Enterprise)</p>
+
+            <div class="c-title">CERTIFICATE</div>
+        </div> 
+        <div class="c-body">
+            <p class="c-body-p">
+                This is to certify that Mr/Ms <strong>{{certificate.name}}</strong> Roll number <strong>{{certificate.collegeid}}</strong> studying <strong>{{certificate.branch}}</strong> at <strong>{{certificate.college}}</strong> has Successfully completed <strong>{{certificate.courseType}}</strong> for <strong>{{certificate.courseDuration}} {{certificate.DurationType}} </strong> in <strong>{{certificate.courseName}}</strong> with effect from <strong>{{certificate.courseDt | date}}</strong>
+                
+                <p>
+                    <strong>BSNL Wishes him/her all the best for a bright future</strong> 
+                </p>
+                 
+                <br>
+            </p>
+            <div class="text-right">
+                <!-- <img src="assets/img/de-sign.png" alt="BSNL" style="height: 85px;"> -->
+                <div class="overlay" style="margin-top: 90px;">
+                   <strong>Divisional Engineer(Training),</strong> <br>
+                    BSNL, Visakhapatnam.</div>
+                
+            </div>
+            <p>
+                <br>
+                Date:<strong>{{certificate.cetificDt | date}}</strong> <br>
+                ID : <strong>{{certificate.idNo}}</strong>
+            </p>
+        </div>
+              
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,29 @@
+<section class="about">
+    <div class="container" data-aos="fade-up">
+        <h1>Student View</h1>       
+            <div class="row">
+                <div class="col-md">Registration Email</div>
+                <div class="col-md"><input type="email" ng-model="findData.email" class="form-control" ></div>
+                <div class="col-md">
+                    <button class="btn btn-primary" ng-click="getData()"> Get Data </button>
+                </div> 
+            </div>
+            <div class="bctGrid2" ng-if = "data[0]">
+               <div class="bctGrid2 border border-primary"  ng-repeat = "x in data">
+                <label>Name : </label>  <label>{{x.name}}</label>
+                <label>E-mail : </label>  <label>{{x.email}}</label>
+                <label>Mobile : </label>  <label>{{x.mobile}}</label>
+                <label>College / ID : </label>  <label>{{x.college}} / {{x.collegeid}}</label>
+                <label>Course : </label>  <label>{{x.courseType}} - {{x.courseName}} for {{x.courseDuration}} weeks</label>
+                <label>Transaction Details : </label>  
+                <p>Transtaion ID : {{x.TransationID}} <br>
+                   Date : {{x.TransationDate}} <br>
+                   Amount : Rs. {{x.courseAMT}}
+                </p>
+               </div>
+                
+
+            </div>
+    </div>
+    
+</section>

@@ -1,0 +1,95 @@
+<section id="popular-courses" class="courses">
+  <div data-aos="fade-up"
+        ng-controller="studentRegtViewCtrl" ng-if="!student">
+
+      <div class="section-title">
+        <h2>Student</h2>
+        <p>Registration Details</p>
+       login : {{login.User.user}} 
+      </div> 
+     
+      <div class="bctGrid4" ng-if="!!data._id">
+        <label>Studend Name</label>
+        <label>{{data.name}}</label>
+
+        <label>Course </label>
+        <label>{{data.courseName}}</label>
+
+        <label>Transation ID </label>
+        <label>{{data.TransationID}}</label>
+
+        <label>Transation Date</label>
+        <label>{{data.TransationDate}}</label>
+
+        <label>Status</label>
+        <select class="form-control"  ng-required=true ng-model="status" >   
+          <option value="Registered" ng-hide = "data.status != 'Registered'">Registered</option>
+            <option value="Payment Approved" ng-hide = "login.User.user != 'jao'">Payment Approved</option>
+            <option value="Admitted" ng-hide = "data.status != 'Payment Approved'">Admitted</option>          
+                                    
+          </select>
+
+        <span ng-hide="true">{{statusDetails.status = status}}</span>  
+        <label>Remarks</label> 
+        <textarea  class="form-control" name="paymentDetails" row="5" 
+        placeholder="Remarks"
+         ng-required=true ng-model="statusDetails.remarks"> 
+        </textarea>
+        <label>Approved  by</label> 
+        <input type="text" ng-model="statusDetails.User" placeholder="JAO / AO / SDE">
+
+          <button class="btn btn-primary" ng-click="updateStatus(data)">Change Status</button>
+      </div>  
+
+     <!----Table----->
+      <div>
+        <div class="bctGrid2">
+          <div>
+            Total Rows : <strong> {{(student|filter:searchText).length}}  /  {{student.length}} </strong> 
+          </div>
+          <div class="bctGrid2">
+            <label for="searchText"> Search : </label><input type="text" ng-model="searchText" class="form-control">
+          </div>
+          
+        </div>   
+           <table class="table">
+            <thead>
+                <tr>
+                    <th>Name <br> e-mail</th>
+                    <th>Course</th>
+                    <th>Transation ID <br> Date</th>
+                    <th>Amount</th> 
+                    <th>Part Amt</th> 
+                    <th>ID <br> Status</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in student  | orderBy: '-createdAt' | filter :searchText " 
+                    ng-if = "dispCondition(x)"> 
+               
+                    <td> 
+                        <strong>{{x.name}}</strong> <br> 
+                        <a ng-href="studentRegtView/{{x._id}}"> {{x.email}} </a> 
+                        <!-- {{x.college}} -->
+                    </td>
+                    <td>{{x.courseName}} <br> {{x.courseDuration}} {{x.DurationType}} </td>
+                    <td>{{x.TransationID}} <br> {{x.TransationDate}}</td>
+                    <td>{{x.courseAMT | currency : "Rs. " : 2 }}</td> 
+                    <td>{{x.partAMT | currency : "Rs. " : 2 }}</td> 
+                    <td> 
+                        <button class="btn btn-info" ng-click="changeStatus(x)">Change Status</button>
+                        <div class="text-success font-weight-bold"> Status : {{x.status}}</div> 
+                        <div ng-repeat = "y in x.statusInfo | orderBy :'-created'">
+                          {{y.status}} - {{y.remarks}}
+
+                        </div>
+                    </td> 
+                </tr>  
+            </tbody>
+           </table> 
+            
+      </div>
+
+  </div>
+
+  </section>

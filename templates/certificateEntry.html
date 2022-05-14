@@ -1,0 +1,102 @@
+<section id="popular-courses">
+    <div class="container"  ng-controller="certificateEntryCtrl" ng-cloak>
+       <div id="popup" class=" mfp-hide white-popup">
+            <app-certificateedit></app-certificateedit>
+       </div>
+        
+    <div class="bctGrid2 bg-info text-white">
+        <div class="bctGrid4"> 
+            <span><strong>ID</strong> Prefix </span>                     
+             <input type="text" ng-model="IdPrefix">
+           <span><strong>ID</strong> sufix</span>  <input type="number" ng-model="IdSufix">
+            <span>Course Start</span> <input type="date" ng-model="courseDt">
+             <span>Certificate Date </span><input type="date" ng-model="cetificDt">
+        </div>
+        <div class="bctGrid2 bg-secondary">
+            <span> Search :  <br>
+                <strong> {{(certificates|filter:searchText).length}} / {{certificates.length}} </strong>
+            </span>
+            <input type="text" ng-model="searchText" class="form-control">
+        </div>
+    
+    </div>
+      
+    <div class="bctGrid2">
+    
+        <div class="bctGrid2 border border-primary"
+            ng-repeat="x in certificates | orderBy: '-createdAt' | filter :searchText ">
+            <lable>Name:</lable>
+            <div>
+                <label>{{x.name}}</label>
+            </div>
+    
+    
+            <lable>Roll No</lable>
+            <div>
+                <label>{{x.collegeid}}</label>
+            </div>
+            <lable>ID No</lable>
+            <div>
+                <label>{{x.idNo}}</label>
+            </div>
+    
+            <lable>Styding Class</lable>
+            <div>
+                <label>{{x.branch}}</label>
+            </div>
+    
+            <lable>College</lable>
+            <div>
+                <label>{{x.college}}</label>
+            </div>
+    
+            <lable>Duration</lable>
+            <div>
+                <label>{{x.courseDuration}} - {{x.DurationType}} </label>
+            </div>
+            <lable>Course </lable>
+            <div>
+                <label>{{x.courseName}}</label>
+            </div>
+    
+            <lable>Course Type </lable>
+            <div>
+                <label>{{x.courseType}}</label>
+            </div>
+    
+            <lable>Start Date</lable>
+            <div>
+                <label>{{x.courseDt | date : "dd-MM-y"}}</label>
+            </div>
+    
+            <lable>Certificate Date </lable>
+            <div>
+                <label>{{x.cetificDt | date : "dd-MM-y"}}</label>
+            </div>
+    
+            <lable>TransationID</lable>
+            <div>
+                <label>{{x.TransationID}}</label>
+                <!-- <label for="">{{x.idx = $index}}</label>   -->
+            </div>
+    
+            <div>
+                <button class="btn btn-danger popup" ng-click="Edit(x)">
+                    <span class="open-popup-link">Edit Certificate <i class="icofont-edit"></i> </span>    
+                </button>
+    
+            </div>
+    
+            <div class="text-center">
+                <button class="btn btn-primary" ng-click="Generate(x)"
+                    ng-hide="x.idNo">Generate Certificate</button>
+                <a href="certificate/{{x.collegeid}}/{{x.idNo}}" class="btn btn-success" 
+                        ng-show="x.idNo">View Certificate 
+                        <i class="icofont-certificate"></i></a>
+            </div>
+    
+        </div>
+    </div>
+       
+    </div>
+</section>

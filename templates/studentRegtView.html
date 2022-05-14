@@ -1,0 +1,91 @@
+<section id="popular-courses" class="courses">
+  <div class="container-fluid" 
+        ng-controller="studentRegtViewCtrl" ng-if="!student">
+
+      <div class="bctGrid2">
+        <h2>Student Registration Details</h2>
+        <label for="">login : {{login.User.user}} </label> 
+      </div> 
+     
+  
+     <!----Table----->
+      <div>
+        <div class="bctGrid2 bg-warning">
+          <div class="bctGrid4 bg-secondary text-white">
+            <label>Remarks</label>
+            <input class="form-control" placeholder="Remarks" ng-model="statusDetails.remarks">
+            <label>Approved by</label>
+            <input type="text" ng-model="statusDetails.User" placeholder="JAO / AO / SDE" class="form-control">
+            <label for=""></label>
+        
+          </div>
+          <div class="bctGrid2">
+            <div class="bctGrid2"> 
+                <span>Filtered Rows :</span>   <strong>  {{(student|filter:searchText).length}}  </strong>
+                <span>Total Rows :</span>   <strong>  {{student.length}} </strong>
+            </div>
+            <input type="text" ng-model="searchText" class="form-control">
+          </div>
+        
+        </div>
+        <div class="table-responsive" style="height: 65vh;">
+          <table class="table table-hover table-striped table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sno</th>
+                    <th>Name </th>
+                    <!-- <th> e-mail</th> -->
+                    <th>Course</th> <th>Duration</th>
+                    <th>Transation ID </th><th> Date</th>
+                    <th>Amount</th> 
+                    <th>PartAmt</th>                     
+                    <th>Change Status to </th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in student  | orderBy: '-createdAt' | filter :searchText " 
+                    ng-if = "dispCondition(x)"> 
+                    <td>{{$index + 1}}</td>
+                    <!-- <td> <strong>{{x.name}}</strong> </td> -->
+                    <td> <strong>
+                        <a ng-href="studentRegtView/{{x._id}}"> {{x.name}} </a> 
+                        <!-- {{x.college}} -->
+                      </strong>
+                    </td>
+                    <td>{{x.courseName}} </td><td> {{x.courseDuration}} {{x.DurationType}} </td>
+                    <td>{{x.TransationID}} </td>
+                    <td colspan="4">
+                      <table width="100%">
+                        <tr>
+                          <td> {{x.TransationDate}}</td>
+                          <td>{{x.courseAMT | currency : "Rs." : 0 }}</td> 
+                          <td>{{x.partAMT | currency : "Rs." : 0}}</td> 
+                          <td class="text-right"> 
+                            {{dispOptions(x.status)}}
+                            <i class="icofont-tick-mark btn btn-success" ng-if="dispConditionBtn(x)"
+                                    ng-click="changeStatus(x)"></i>
+                              <!-- <button class="btn btn-info" ng-click="changeStatus(x)">Change Status</button> -->
+                          </td> 
+                        </tr>
+                        <tr>
+                          <td colspan="4">
+                            <!-- <div class="text-success font-weight-bold"> Status : {{x.status}}</div>  -->
+                              <div ng-repeat = "y in x.statusInfo | orderBy :'-created'">
+                               <abbr title="{{y.created}} "> {{y.status}}  </abbr> : {{y.User}}
+                              </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    
+                </tr>  
+            </tbody>
+           </table> 
+        </div>  
+           
+            
+      </div>
+
+  </div>
+
+  </section>
