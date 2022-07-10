@@ -30,6 +30,11 @@ app.config(function($routeProvider, $locationProvider) {
     .when("/courses", {
         templateUrl : "templates/courses.html"        
     })
+    .when("/coursepage/:courselink", {
+        templateUrl : "templates/courseDetails/coursePage.html",
+        controller:"courseCtrl"
+
+    })
     .when("/findstudent", {
         templateUrl : "templates/student/view.html",
         controller: "findstudent"        

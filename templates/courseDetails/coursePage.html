@@ -1,0 +1,61 @@
+<main id="main">
+     <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+      <h2>{{data.courseType}} course on {{data.courseName}}</h2>
+      
+      <p>
+
+      </p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <img src="assets/img/{{data.courseImg}}" class="img-fluid" alt="">
+            <h3>{{data.page.title}}</h3>
+            <p>
+                {{data.page.contentDesc}}
+              <ul>
+                <li ng-repeat="x in data.page.content">{{x}}</li>
+                   
+              </ul>
+              
+            </p>
+            <p ng-repeat="p in data.page.contentNote">{{p}}</p>
+
+          </div>
+          <div class="col-lg-4">
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Trainer</h5>
+              <p>{{data.page.trainer}}</p>
+            </div>
+
+            <!-- <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Course Fee</h5>
+              <p>Rs. 2950.00</p>
+            </div> -->
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Available Seats</h5>
+              <p>{{data.page.seats}}</p>
+            </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Duration</h5>
+              <p>{{data.page.Duration}}</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cource Details Section -->
+  
+</main>
+  
+  
