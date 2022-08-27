@@ -3,7 +3,7 @@ app.controller('certificateEntryCtrl',function($scope, $http,  toaster, $mdDialo
 	$scope.data = {}
 	$scope.courseDt = new Date();
 	$scope.cetificDt = new Date();
-	$scope.IdPrefix = "2021MR";
+	$scope.IdPrefix = "2022MR";
 	$scope.IdSufix = 0;
 
 	$scope.GetData = function(){ 
