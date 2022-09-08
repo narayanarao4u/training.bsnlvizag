@@ -13,13 +13,16 @@
                 <label>Name : </label>  <label>{{x.name}}</label>
                 <label>E-mail : </label>  <label>{{x.email}}</label>
                 <label>Mobile : </label>  <label>{{x.mobile}}</label>
-                <label>College / ID : </label>  <label>{{x.college}} / {{x.collegeid}}</label>
-                <label>Course : </label>  <label>{{x.courseType}} - {{x.courseName}} for {{x.courseDuration}} weeks</label>
+                <label>College Name: </label>  <label>{{x.college}}</label>
+                <label>Roll No: </label>  <label> {{x.collegeid}}</label>
+                <label>Course : </label>  <label>{{x.courseType}} - {{x.courseName}} for {{x.courseDuration}} {{x.DurationType}}</label>
                 <label>Transaction Details : </label>  
-                <p>Transtaion ID : {{x.TransationID}} <br>
-                   Date : {{x.TransationDate}} <br>
-                   Amount : Rs. {{x.courseAMT}}
-                </p>
+                <div class="bctGrid2">
+                    <label>Transtaion ID : </label> <label>{{x.TransationID}} </label>
+                    <label>Date : </label> <label>{{x.TransationDate}}</label>
+                    <label>Amount :</label><label>  &#8377; {{x.partAMT}}  of &#8377; {{x.courseAMT}}</label>
+                </div>
+                
                </div>
                 
 
