@@ -1,0 +1,65 @@
+<section class="container">
+  <div class="row">
+    <button class="col btn btn-primary"><h2>Exam</h2></button>
+    <button class="col btn btn-primary"><h2>Review</h2></button>
+  </div>
+  <div class="container" data-aos="fade-up" ng-if="!show_exam_Panel">
+    <div class="row">
+      <div class="col-md">Roll No/Student ID </div>
+      <div class="col-md"><input type="text" ng-model="findData.collegeid" class="form-control"></div>
+      <div class="col-md">
+        <button class="btn btn-primary" ng-click="getData()"> Get Data </button>
+      </div>
+    </div>
+
+    <div class="row" ng-if="showname">
+      <div class="col-md" data-aos="fade-up">
+        <div class="col-md">Name </div>
+        <div class="col-md"><input type="text" ng-model="findData.name" class="form-control"></div>
+        <div class="col-md">
+          <button class="btn btn-success" ng-click="startExam()"> Start Exam </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="showname">
+    <div class="row" ng-if="show_exam_Panel">
+      <div class="col-sm">Name: {{findData.name}} </div>
+      <div class="col-sm">Student ID: {{findData.collegeid}} </div>
+    </div>
+    <div>
+        <div class="row">
+          <button class="col-3 btn btn-info" ng-click="prevClick()">Prev</button>
+          <div class="col-6 bg-dark text-white">Question No : {{ disQNo + 1}}</div>
+          <button class="col-3 btn btn-info" ng-click="nextClick()">Next</button>
+        </div>
+        <div class="row">
+          <div class="col-2  bg-warning text-dark">Q1{{ disQNo + 1 }} </div>
+          <div class="col-10 ">Question ID : {{findData.QAns[disQNo].qNo}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. A corporis eius possimus similique cupiditate culpa rem inventore consectetur nesciunt, sequi suscipit quidem quisquam quos, tempore veniam assumenda. Dolorum, nisi dolore qui dolorem aliquid odio ex perspiciatis voluptates asperiores labore eius omnis similique accusamus deleniti quia fugiat, nesciunt sapiente suscipit esse.</div>
+        </div>
+        <div class="row mt-2 border border-dark" ng-click="selectAns('a')">
+          <div class="col-2  bg-secondary text-white" >A</div>
+          <div class="col-10 "  ng-style="styleAns('a')" >Answer A  </div>
+        </div>
+        <div class="row mt-2 border border-dark" ng-click="selectAns('b')">
+          <div class="col-2  bg-secondary text-white">B</div>
+          <div class="col-10" ng-style="styleAns('b')" >Answer B  </div>
+        </div>
+        <div class="row mt-2 border border-dark" ng-click="selectAns('c')">
+          <div class="col-2  bg-secondary text-white">C</div>
+          <div class="col-10" ng-style="styleAns('c')" >Answer C  </div>
+        </div>
+        <div class="row mt-2 border border-dark" ng-click="selectAns('d')">
+          <div class="col-2  bg-secondary text-white">D</div>
+          <div class="col-10" ng-style="styleAns('d')" >Answer D  </div>
+        </div>
+
+        <div class="row mt-3">
+          <button class="col-3 btn btn-info" ng-click="prevClick()">Prev</button>
+          <div class="col-6 bg-dark text-white">Question No : {{ disQNo + 1}}</div>
+          <button class="col-3 btn btn-info" ng-click="nextClick()">Next</button>
+        </div>
+        
+    </div>
+  </div>
+</section>

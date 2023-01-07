@@ -9,7 +9,7 @@ app.controller('certificateEntryCtrl',function($scope, $http,  toaster, $mdDialo
 	$scope.GetData = function(){ 
 		$http({
 			method: 'GET',
-			url: baseURL + '/student',		
+			url: baseURL + '/student?idNo=false',		
 		  }).then(function successCallback(res) {			
 				$scope.certificates =  res.data.data;		 	
 			}, function errorCallback(response) {				

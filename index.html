@@ -70,51 +70,17 @@
 
 <body ng-app="myApp" >
 
- <!-- Google Tag Manager (noscript) -->
+ <!--#region Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7NFM56"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <!--endregion Google Tag Manager (noscript) -->
 
   <div ng-controller="mainCtrl">
 
-     <!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-      <img src="assets/img/bsnl1.png" alt="BSNL" style="height: 85PX;">
-      <h1 class="logo mr-auto"><a href="home"><abbr title="Bharat Sanchar Nigam Limited">BSNL</abbr> Training Point</a></h1>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="home">Home</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="courses">Courses</a></li>
-          <li><a href="contact">Contact</a></li>
-          <li class="drop-down">
-            <a href="login"> Student</a>
-                <ul>
-                    <li><a href="findstudent">View Registration Details</a></li>
-                    <li><a href="coursepage">CoursePage</a></li>
-                </ul>
-        </li>
-
-          <li class="drop-down" ng-if="login">
-              <a href="login"> Admin</a>
-                  <ul>
-                      <li><a href="certificate">Certificate</a></li>
-                      <li><a href="certificateEntry">Data Entry</a></li>
-                      <li><a href="studentRegtView">Students Registration</a></li>
-                      <li><a href="collegeList">Colleges List </a></li>
-                  </ul>
-          </li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      <a href="register" class="get-started-btn">Register</a>
-
-    </div>
+    <app-header></app-header>
     <toaster-container></toaster-container>
-
   </header>
   <!-- End Header -->
 
@@ -137,7 +103,7 @@
   </div>
 
 
-
+<!--#region Scripts  -->
   <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
@@ -183,9 +149,10 @@
     <script src="assets/js/controllers/studentRegtViewCtrl.js"></script>
     <script src="assets/js/controllers/collegeCtrl.js"></script>
     <script src="assets/js/controllers/courseCtrl.js"></script>
+    <script src="assets/js/controllers/exam_login.js"></script>
 
     <script src="assets/js/route.js"></script>
-
+<!--#endregion main  -->
 </body>
 
 </html>

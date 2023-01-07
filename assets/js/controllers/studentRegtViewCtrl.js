@@ -1,12 +1,12 @@
 app.controller('studentRegtViewCtrl',function($scope, $http, $routeParams, toaster){	
 
 	var ID = $routeParams.id;
-	var rurl = baseURL + "/student";
+	var rurl = baseURL + "/student?idNo=false";
 	if(ID) {
 		rurl = baseURL + "/student/"+ID;
 	} else
 	{
-		rurl = baseURL + "/student";
+		rurl = baseURL + "/student?idNo=false";
 	}
 	
 	$scope.data = {};

@@ -8,25 +8,28 @@
                     <button class="btn btn-primary" ng-click="getData()"> Get Data </button>
                 </div> 
             </div>
-            <div class="bctGrid2" ng-if = "data[0]">
-               <div class="bctGrid2 border border-primary"  ng-repeat = "x in data">
-                <label>Name : </label>  <label>{{x.name}}</label>
-                <label>E-mail : </label>  <label>{{x.email}}</label>
-                <label>Mobile : </label>  <label>{{x.mobile}}</label>
-                <label>College Name: </label>  <label>{{x.college}}</label>
-                <label>Roll No: </label>  <label> {{x.collegeid}}</label>
-                <label>Course : </label>  <label>{{x.courseType}} - {{x.courseName}} for {{x.courseDuration}} {{x.DurationType}}</label>
-                <label>Transaction Details : </label>  
-                <div class="bctGrid2">
-                    <label>Transtaion ID : </label> <label>{{x.TransationID}} </label>
-                    <label>Date : </label> <label>{{x.TransationDate}}</label>
-                    <label>Amount :</label><label>  &#8377; {{x.partAMT}}  of &#8377; {{x.courseAMT}}</label>
-                </div>
-                
-               </div>
-                
+        <div class="row" ng-if = "data[0]">
+           <div class="col-sm-6 border border-primary"  ng-repeat = "x in data">
 
+            <div class="bctGrid2">
+              <label>Name : </label>  <label>{{x.name}}</label>
+              <label>E-mail : </label>  <label>{{x.email}}</label>
+              <label>Mobile : </label>  <label>{{x.mobile}}</label>
+              <label>College Name: </label>  <label>{{x.college}}</label>
+              <label>Roll No: </label>  <label> {{x.collegeid}}</label>
+              <label>Course : </label>  <label>{{x.courseType}} - {{x.courseName}} for {{x.courseDuration}} {{x.DurationType}}</label>
+              <label>Transaction Details : </label>
+              <div class="bctGrid2">
+                  <label>Transtaion ID : </label> <label>{{x.TransationID}} </label>
+                  <label>Date : </label> <label>{{x.TransationDate}}</label>
+                  <label>Amount :</label><label>  &#8377; {{x.partAMT}}  of &#8377; {{x.courseAMT}}</label>
+              </div>
             </div>
+            
+           </div>
+            
+
+        </div>
     </div>
     
 </section>
